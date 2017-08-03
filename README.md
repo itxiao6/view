@@ -7,7 +7,7 @@
 使用 Composer 时，只需要执行以下命令即可：
 
 ``` sh
-composer require xiaoler/blade
+composer require Itxiao6/view
 ```
 
 如果你没有使用 Composer，可以将 `src` 目录复制到你的项目中，然后 `require` 所有的文件即可。
@@ -19,21 +19,21 @@ composer require xiaoler/blade
 $path = ['/view_path'];         // 视图文件目录，这是数组，可以有多个目录
 $cachePath = '/cache_path';     // 编译文件缓存目录
 
-$compiler = new \Xiaoler\Blade\Compilers\BladeCompiler($cachePath);
+$compiler = new \Itxiao6\View\Compilers\BladeCompiler($cachePath);
 
 // 如过有需要，你可以添加自定义关键字
 $compiler->directive('datetime', function($timestamp) {
     return preg_replace('/(\(\d+\))/', '<?php echo date("Y-m-d H:i:s", $1); ?>', $timestamp);
 });
 
-$engine = new \Xiaoler\Blade\Engines\CompilerEngine($compiler);
-$finder = new \Xiaoler\Blade\FileViewFinder($path);
+$engine = new \Itxiao6\View\Engines\CompilerEngine($compiler);
+$finder = new \Itxiao6\View\FileViewFinder($path);
 
 // 如果需要添加自定义的文件扩展，使用以下方法
 $finder->addExtension('tpl');
 
 // 实例化 Factory
-$factory = new \Xiaoler\Blade\Factory($engine, $finder);
+$factory = new \Itxiao6\View\Factory($engine, $finder);
 
 // 渲染视图并输出
 echo $factory->make('hello', ['a' => 1, 'b' => 2])->render();
