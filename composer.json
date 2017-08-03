@@ -1,0 +1,26 @@
+{
+    "name": "Itxiao6/blade",
+    "description": "This is Minkernel view",
+    "license": "MIT",
+    "homepage": "http://www.itxiao6.top",
+    "support": {
+        "source": "https://github.com/Itxiao6/view"
+    },
+    "authors": [
+        {
+            "name": "Small six",
+            "email": "itxiao6@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Itxiao6\\Blade\\": "src/"
+        }
+    }
+}
