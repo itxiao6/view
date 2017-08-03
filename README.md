@@ -1,6 +1,6 @@
 # Blade
 
-这是从 Laravel 中抽取的模板引擎，跟常见的做法不同，这是一个独立的模块，不再依赖于 Laravel 的容器或其他任何组件。
+这是从 Laravel 中抽取的模板引擎，跟常见的做法不同，这是一个独立的模块，不再依赖于 Laravel 的容器或其他任何组件。
 
 ### 安装
 
@@ -29,10 +29,10 @@ $compiler->directive('datetime', function($timestamp) {
 $engine = new \Itxiao6\View\Engines\CompilerEngine($compiler);
 $finder = new \Itxiao6\View\FileViewFinder($path);
 
-// 如果需要添加自定义的文件扩展，使用以下方法
+// 如果需要添加自定义的文件扩展，使用以下方法
 $finder->addExtension('tpl');
 
-// 实例化 Factory
+// 实例化 Factory
 $factory = new \Itxiao6\View\Factory($engine, $finder);
 
 // 渲染视图并输出
@@ -44,6 +44,6 @@ echo $factory->make('hello', ['a' => 1, 'b' => 2])->render();
 - `@inject` `@can` `@cannot` `@lang` 关键字被移除了
 - 不支持事件和中间件
 
-文档: [http://laravel.com/docs/5.1/blade](http://laravel.com/docs/5.1/blade)
+文档: [http://laravel.com/docs/5.1/blade](http://laravel.com/docs/5.1/blade)
 
-感谢 Laravel 和它的创作者们，Laravel 是个伟大的项目。
+感谢 Laravel 和它的创作者们，Laravel 是个伟大的项目。
