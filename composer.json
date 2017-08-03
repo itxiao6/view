@@ -20,7 +20,7 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "Itxiao6\\Blade\\": "src/"
+            "Itxiao6\\View\\": "src/"
         }
     }
 }
