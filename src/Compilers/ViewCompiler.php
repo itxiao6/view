@@ -2,7 +2,7 @@
 
 namespace Itxiao6\Blade\Compilers;
 
-class BladeCompiler extends Compiler implements CompilerInterface
+class ViewCompiler extends Compiler implements CompilerInterface
 {
     /**
      * All custom "directive" handlers.
