@@ -1,6 +1,6 @@
 <?php
 
-namespace Itxiao6\Blade;
+namespace Itxiao6\View;
 
 use InvalidArgumentException;
 
@@ -9,7 +9,7 @@ class FileViewFinder implements ViewFinderInterface
     /**
      * The filesystem instance.
      *
-     * @var \Itxiao6\Blade\Filesystem
+     * @var \Itxiao6\View\Filesystem
      */
     protected $files;
 
@@ -225,7 +225,7 @@ class FileViewFinder implements ViewFinderInterface
     /**
      * Get the filesystem instance.
      *
-     * @return \Itxiao6\Blade\Filesystem
+     * @return \Itxiao6\View\Filesystem
      */
     public function getFilesystem()
     {

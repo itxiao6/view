@@ -1,6 +1,6 @@
 <?php
 
-namespace Itxiao6\Blade\Compilers;
+namespace Itxiao6\View\Compilers;
 
 class ViewCompiler extends Compiler implements CompilerInterface
 {
@@ -114,7 +114,7 @@ class ViewCompiler extends Compiler implements CompilerInterface
     }
 
     /**
-     * Compile the given Blade template contents.
+     * Compile the given View template contents.
      *
      * @param  string  $value
      * @return string
@@ -163,7 +163,7 @@ class ViewCompiler extends Compiler implements CompilerInterface
     }
 
     /**
-     * Compile Blade comments into valid PHP.
+     * Compile View comments into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -176,7 +176,7 @@ class ViewCompiler extends Compiler implements CompilerInterface
     }
 
     /**
-     * Compile Blade echos into valid PHP.
+     * Compile View echos into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -232,7 +232,7 @@ class ViewCompiler extends Compiler implements CompilerInterface
     }
 
     /**
-     * Compile Blade statements that start with "@".
+     * Compile View statements that start with "@".
      *
      * @param  string  $value
      * @return mixed

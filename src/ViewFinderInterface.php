@@ -1,6 +1,6 @@
 <?php
 
-namespace Itxiao6\Blade;
+namespace Itxiao6\View;
 
 interface ViewFinderInterface
 {

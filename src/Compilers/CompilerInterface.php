@@ -1,6 +1,6 @@
 <?php
 
-namespace Itxiao6\Blade\Compilers;
+namespace Itxiao6\View\Compilers;
 
 interface CompilerInterface
 {

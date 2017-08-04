@@ -1,24 +1,24 @@
 <?php
 
-namespace Itxiao6\Blade;
+namespace Itxiao6\View;
 
 use ArrayAccess;
 use BadMethodCallException;
-use Itxiao6\Blade\Engines\EngineInterface;
+use Itxiao6\View\Engines\EngineInterface;
 
 class View implements ArrayAccess
 {
     /**
      * The view factory instance.
      *
-     * @var \Itxiao6\Blade\Factory
+     * @var \Itxiao6\View\Factory
      */
     protected $factory;
 
     /**
      * The engine implementation.
      *
-     * @var \Itxiao6\Blade\Engines\EngineInterface
+     * @var \Itxiao6\View\Engines\EngineInterface
      */
     protected $engine;
 
@@ -46,8 +46,8 @@ class View implements ArrayAccess
     /**
      * Create a new view instance.
      *
-     * @param  \Itxiao6\Blade\Factory  $factory
-     * @param  \Itxiao6\Blade\Engines\EngineInterface  $engine
+     * @param  \Itxiao6\View\Factory  $factory
+     * @param  \Itxiao6\View\Engines\EngineInterface  $engine
      * @param  string  $view
      * @param  string  $path
      * @param  array   $data
@@ -179,7 +179,7 @@ class View implements ArrayAccess
     /**
      * Get the view factory instance.
      *
-     * @return \Itxiao6\Blade\Factory
+     * @return \Itxiao6\View\Factory
      */
     public function getFactory()
     {
@@ -189,7 +189,7 @@ class View implements ArrayAccess
     /**
      * Get the view's rendering engine.
      *
-     * @return \Itxiao6\Blade\Engines\EngineInterface
+     * @return \Itxiao6\View\Engines\EngineInterface
      */
     public function getEngine()
     {
@@ -342,7 +342,7 @@ class View implements ArrayAccess
      *
      * @param  string  $method
      * @param  array   $parameters
-     * @return \Itxiao6\Blade\View
+     * @return \Itxiao6\View\View
      *
      * @throws \BadMethodCallException
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Itxiao6\Blade\Engines;
+namespace Itxiao6\View\Engines;
 
 interface EngineInterface
 {

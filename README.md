@@ -1,4 +1,4 @@
-# Blade
+# View
 
 这是从 Laravel 中抽取的模板引擎，跟常见的做法不同，这是一个独立的模块，不再依赖于 Laravel 的容器或其他任何组件。
 
@@ -19,7 +19,7 @@ composer require Itxiao6/view
 $path = ['/view_path'];         // 视图文件目录，这是数组，可以有多个目录
 $cachePath = '/cache_path';     // 编译文件缓存目录
 
-$compiler = new \Itxiao6\View\Compilers\BladeCompiler($cachePath);
+$compiler = new \Itxiao6\View\Compilers\ViewCompiler($cachePath);
 
 // 如过有需要，你可以添加自定义关键字
 $compiler->directive('datetime', function($timestamp) {
@@ -39,7 +39,7 @@ $factory = new \Itxiao6\View\Factory($engine, $finder);
 echo $factory->make('hello', ['a' => 1, 'b' => 2])->render();
 ```
 
-几乎所有 Blade 的特性都被保留了，但是一些专属于 Laravel 的特征被移除了：
+几乎所有 View 的特性都被保留了，但是一些专属于 Laravel 的特征被移除了：
 
 - `@inject` `@can` `@cannot` `@lang` 关键字被移除了
 - 不支持事件和中间件

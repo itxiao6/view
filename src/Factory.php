@@ -1,24 +1,24 @@
 <?php
 
-namespace Itxiao6\Blade;
+namespace Itxiao6\View;
 
 use InvalidArgumentException;
-use Itxiao6\Blade\ViewFinderInterface;
-use Itxiao6\Blade\Engines\EngineInterface;
+use Itxiao6\View\ViewFinderInterface;
+use Itxiao6\View\Engines\EngineInterface;
 
 class Factory
 {
     /**
      * The engine implementation.
      *
-     * @var \Itxiao6\Blade\Engines\EngineInterface
+     * @var \Itxiao6\View\Engines\EngineInterface
      */
     protected $engine;
 
     /**
      * The view finder implementation.
      *
-     * @var \Itxiao6\Blade\ViewFinderInterface
+     * @var \Itxiao6\View\ViewFinderInterface
      */
     protected $finder;
 
@@ -88,7 +88,7 @@ class Factory
     /**
      * Create a new view factory instance.
      *
-     * @param  \Itxiao6\Blade\ViewFinderInterface  $finder
+     * @param  \Itxiao6\View\ViewFinderInterface  $finder
      * @return void
      */
     public function __construct(EngineInterface $engine, ViewFinderInterface $finder)
@@ -105,7 +105,7 @@ class Factory
      * @param  string  $path
      * @param  array   $data
      * @param  array   $mergeData
-     * @return \Itxiao6\Blade\View
+     * @return \Itxiao6\View\View
      */
     public function file($path, $data = [], $mergeData = [])
     {
@@ -122,7 +122,7 @@ class Factory
      * @param  string  $view
      * @param  array   $data
      * @param  array   $mergeData
-     * @return \Itxiao6\Blade\View
+     * @return \Itxiao6\View\View
      */
     public function make($view, $data = [], $mergeData = [])
     {
@@ -168,7 +168,7 @@ class Factory
      *
      * @param  string  $view
      * @param  mixed   $data
-     * @return \Itxiao6\Blade\View
+     * @return \Itxiao6\View\View
      */
     public function of($view, $data = [])
     {
@@ -626,7 +626,7 @@ class Factory
     /**
      * Get the view finder instance.
      *
-     * @return \Itxiao6\Blade\ViewFinderInterface
+     * @return \Itxiao6\View\ViewFinderInterface
      */
     public function getFinder()
     {
@@ -636,7 +636,7 @@ class Factory
     /**
      * Set the view finder instance.
      *
-     * @param  \Itxiao6\Blade\ViewFinderInterface  $finder
+     * @param  \Itxiao6\View\ViewFinderInterface  $finder
      * @return void
      */
     public function setFinder(ViewFinderInterface $finder)

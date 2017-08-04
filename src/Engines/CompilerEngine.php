@@ -1,16 +1,16 @@
 <?php
 
-namespace Itxiao6\Blade\Engines;
+namespace Itxiao6\View\Engines;
 
 use ErrorException;
-use Itxiao6\Blade\Compilers\CompilerInterface;
+use Itxiao6\View\Compilers\CompilerInterface;
 
 class CompilerEngine extends PhpEngine
 {
     /**
-     * The Blade compiler instance.
+     * The View compiler instance.
      *
-     * @var \Itxiao6\Blade\Compilers\CompilerInterface
+     * @var \Itxiao6\View\Compilers\CompilerInterface
      */
     protected $compiler;
 
@@ -22,9 +22,9 @@ class CompilerEngine extends PhpEngine
     protected $lastCompiled = [];
 
     /**
-     * Create a new Blade view engine instance.
+     * Create a new View view engine instance.
      *
-     * @param  \Itxiao6\Blade\Compilers\CompilerInterface  $compiler
+     * @param  \Itxiao6\View\Compilers\CompilerInterface  $compiler
      * @return void
      */
     public function __construct(CompilerInterface $compiler)
@@ -92,7 +92,7 @@ class CompilerEngine extends PhpEngine
     /**
      * Get the compiler implementation.
      *
-     * @return \Itxiao6\Blade\Compilers\CompilerInterface
+     * @return \Itxiao6\View\Compilers\CompilerInterface
      */
     public function getCompiler()
     {

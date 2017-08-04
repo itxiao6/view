@@ -1,15 +1,15 @@
 <?php
 
-namespace Itxiao6\Blade\Compilers;
+namespace Itxiao6\View\Compilers;
 
-use Itxiao6\Blade\Filesystem;
+use Itxiao6\View\Filesystem;
 
 abstract class Compiler
 {
     /**
      * The Filesystem instance.
      *
-     * @var \Itxiao6\Blade\Filesystem
+     * @var \Itxiao6\View\Filesystem
      */
     protected $files;
 
