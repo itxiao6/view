@@ -84,6 +84,11 @@ class Factory
      * @var int
      */
     protected $renderCount = 0;
+    /**
+     * 模板实例
+     * @var
+     */
+    protected $view;
 
     /**
      * Create a new view factory instance.
@@ -137,8 +142,14 @@ class Factory
         $data = array_merge($mergeData, $data);
 
         $view = new View($this, $this->engine, $view, $path, $data);
-
+        # 存入本对象的视图中
+        $this -> view = $view;
         return $view;
+    }
+    # 转换为字符串
+    public function toString()
+    {
+        return $this -> view -> render();
     }
 
     /**
