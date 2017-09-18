@@ -126,9 +126,6 @@ class Factory
      */
     public function make($view, $data = [], $mergeData = [])
     {
-        if(!$this -> exists($view)){
-            throw new \Exception("找不到指定模板:".$view);
-        }
         if (isset($this->aliases[$view])) {
             $view = $this->aliases[$view];
         }
