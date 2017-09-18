@@ -2,6 +2,11 @@
 
 namespace Itxiao6\View\Engines;
 
+use Couchbase\Exception;
+use Itxiao6\Database\QueryException;
+use MongoDB\Driver\Exception\ExecutionTimeoutException;
+use Symfony\Component\Serializer\Exception\ExtraAttributesException;
+
 class PhpEngine implements EngineInterface
 {
     /**
@@ -36,6 +41,27 @@ class PhpEngine implements EngineInterface
         // an exception is thrown. This prevents any partial views from leaking.
         try {
             include $__path;
+        }
+        catch (\MongoExecutionTimeoutException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (ExecutionTimeoutException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (ExtraAttributesException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (Exception $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (\PDOException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (QueryException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
+        }
+        catch (\SQLiteException $exception){
+            \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
         }
         catch (\ErrorException $exception){
             \Service\Exception::__throw($exception -> getMessage(),$exception ->getCode(),$exception -> getPrevious(),$exception -> getFile(),$exception -> getLine());
