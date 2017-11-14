@@ -7,6 +7,11 @@ use Exception;
 class Filesystem
 {
     /**
+     * 模板文件池
+     * @var array
+     */
+    protected static $fileList = [];
+    /**
      * Determine if a file exists.
      *
      * @param  string  $path
@@ -28,7 +33,16 @@ class Filesystem
     public function get($path)
     {
         if ($this->isFile($path)) {
-            return file_get_contents($path);
+            /**
+             * 判断模板文件是否已经加载过了
+             */
+            if(!isset(self::$fileList[$path])){
+                self::$fileList[$path] = file_get_contents($path);
+            }
+            /**
+             * 返回文件内容
+             */
+            return self::$fileList[$path];
         }
         throw new Exception("File does not exist at path {$path}");
     }
