@@ -44,7 +44,7 @@ class Filesystem
              */
             return self::$fileList[$path];
         }
-        throw new Exception("File does not exist at path {$path}");
+        throw new Exception("文件 {$path} 不存在");
     }
 
     /**
